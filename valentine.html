@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Love 💕</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500;600&display=swap');
+    
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; padding: 0; }
+    
+    .font-title { font-family: 'Pacifico', cursive; }
+    .font-body { font-family: 'Quicksand', sans-serif; }
+    
+    .floating { animation: float 3s ease-in-out infinite; }
+    .floating-delay { animation: float 3s ease-in-out infinite; animation-delay: 1.5s; }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+    
+    .heart-beat { animation: heartbeat 1.2s ease-in-out infinite; }
+    
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      25% { transform: scale(1.1); }
+      50% { transform: scale(1); }
+      75% { transform: scale(1.15); }
+    }
+    
+    .sparkle { animation: sparkle 2s ease-in-out infinite; }
+    
+    @keyframes sparkle {
+      0%, 100% { opacity: 0.3; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+    
+    .photo-frame {
+      background: linear-gradient(135deg, #ffc0cb, #ffb6c1, #ff69b4, #ffb6c1, #ffc0cb);
+      background-size: 300% 300%;
+      animation: gradient-move 4s ease infinite;
+    }
+    
+    @keyframes gradient-move {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    
+    .glow { animation: glow 2s ease-in-out infinite alternate; }
+    
+    @keyframes glow {
+      from { box-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4; }
+      to { box-shadow: 0 0 20px #ff1493, 0 0 40px #ff1493; }
+    }
+    
+    .falling-heart {
+      position: absolute;
+      animation: fall linear infinite;
+      pointer-events: none;
+    }
+    
+    @keyframes fall {
+      0% { transform: translateY(-100%) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(800px) rotate(360deg); opacity: 0; }
+    }
+    
+    .letter-card {
+      background: linear-gradient(145deg, #fff5f7 0%, #ffe4ec 100%);
+      border: 3px solid #ffb6c1;
+    }
+    
+    .btn-love {
+      background: white;
+      border: 3px solid #ff69b4;
+      color: #ff69b4;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-love:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 25px rgba(255,105,180,0.5);
+      background: #ffe4ec;
+    }
+    
+    .wiggle { animation: wiggle 0.5s ease-in-out; }
+    
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-5deg); }
+      75% { transform: rotate(5deg); }
+    }
+    
+    .bounce-in { animation: bounceIn 0.6s ease-out; }
+    
+    @keyframes bounceIn {
+      0% { transform: scale(0); opacity: 0; }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    
+    .star {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: #fff;
+      border-radius: 50%;
+      animation: twinkle 2s ease-in-out infinite;
+    }
+    
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.5); }
+    }
+    
+    .ribbon {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #ff69b4;
+      color: white;
+      padding: 5px 20px;
+      border-radius: 20px;
+      font-size: 12px;
+      box-shadow: 0 3px 10px rgba(255,105,180,0.3);
+    }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full font-body overflow-auto">
+  <div id="app" class="min-h-full w-full relative" style="background: linear-gradient(180deg, #ffe4ec 0%, #ffc0cb 50%, #ffb6c1 100%);"><!-- Falling Hearts Container -->
+   <div id="hearts-container" class="absolute inset-0 overflow-hidden pointer-events-none"></div><!-- Sparkles -->
+   <div class="absolute inset-0 pointer-events-none overflow-hidden">
+    <div class="star sparkle" style="top: 10%; left: 15%; animation-delay: 0s;"></div>
+    <div class="star sparkle" style="top: 20%; left: 80%; animation-delay: 0.5s;"></div>
+    <div class="star sparkle" style="top: 40%; left: 10%; animation-delay: 1s;"></div>
+    <div class="star sparkle" style="top: 60%; left: 90%; animation-delay: 1.5s;"></div>
+    <div class="star sparkle" style="top: 80%; left: 20%; animation-delay: 2s;"></div>
+    <div class="star sparkle" style="top: 15%; left: 50%; animation-delay: 0.3s;"></div>
+    <div class="star sparkle" style="top: 70%; left: 70%; animation-delay: 0.8s;"></div>
+   </div><!-- Main Content -->
+   <div class="relative z-10 flex flex-col items-center justify-center min-h-full px-4 py-8"><!-- Title -->
+    <h1 id="title" class="font-title text-4xl md:text-5xl text-pink-600 mb-6 floating text-center drop-shadow-lg">For My Love 💕</h1><!-- Photo Frame -->
+    <div class="photo-frame p-3 rounded-full glow mb-6 floating-delay">
+     <div class="bg-white p-2 rounded-full"><img id="photo-preview" src="https://scontent.fcgk42-1.fna.fbcdn.net/v/t69.46293-2/631977853_1443693723809816_8070795437140170711_n.?stp=dst-jpg_s960x960_tt6&_nc_cat=106&ccb=1-7&_nc_sid=942482&_nc_ohc=fgSfg-83CakQ7kNvwFDAkSq&_nc_oc=AdlJIyXryktXXr8N-wTFj1dNR0Fmqxi35RpElXouEUmrt0rCjOIua1rJggx2GoJLd0kQkH-_3K-4vrkLt1k4GkK2&_nc_zt=28&_nc_ht=scontent.fcgk42-1.fna&_nc_gid=KYp724vsUS36PA27tEDPlw&oh=03_Q7cD4gG1RkD_hv2q5--kkw6GQWpPHiVvoGXQ7aE8nPearUtbog&oe=6990F6CB" alt="My Love" class="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover" loading="lazy" onerror="console.error('Photo failed to load:', this.src); this.style.background='#ffb6c1';">
+     </div>
+    </div><!-- Heart Icon -->
+    <div class="heart-beat mb-6">
+     <svg class="w-16 h-16 text-red-500 drop-shadow-lg" fill="currentColor" viewbox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+     </svg>
+    </div><!-- Love Letter Card -->
+    <div class="letter-card rounded-3xl p-6 md:p-8 max-w-md w-full shadow-xl relative bounce-in">
+     <div class="ribbon font-medium">
+      💌 Love Letter
+     </div><!-- Decorative Hearts -->
+     <div class="absolute -top-2 -left-2 text-2xl floating">
+      💗
+     </div>
+     <div class="absolute -top-2 -right-2 text-2xl floating-delay">
+      💖
+     </div>
+     <div class="absolute -bottom-2 -left-2 text-2xl floating-delay">
+      💕
+     </div>
+     <div class="absolute -bottom-2 -right-2 text-2xl floating">
+      💓
+     </div>
+     <div class="text-center mt-4">
+      <p id="message" class="text-gray-700 text-lg md:text-xl leading-relaxed font-medium">Thank you for wanting to be my girlfriend. I don't know what to give you. Sorry, I can only give you this love you🤍🤍.</p>
+     </div><!-- Cute Divider -->
+     <div class="flex items-center justify-center my-6 gap-2"><span class="text-pink-400">✿</span>
+      <div class="h-px bg-pink-300 w-16"></div><span class="text-red-400">♡</span>
+      <div class="h-px bg-pink-300 w-16"></div><span class="text-pink-400">✿</span>
+     </div><!-- Interactive Button -->
+     <div class="text-center"><button id="love-btn" onclick="sendLove()" class="btn-love font-semibold py-3 px-8 rounded-full shadow-lg"> 💝 Send My Love 💝 </button>
+     </div><!-- Love Counter -->
+     <div id="love-counter" class="text-center mt-4 text-pink-600 font-medium hidden"><span id="counter-text">You've received </span> <span id="counter-num" class="text-2xl font-bold text-red-500">0</span> <span> loves! 💕</span>
+     </div>
+    </div><!-- Bottom Hearts -->
+    <div class="flex gap-4 mt-8"><span class="text-3xl floating" style="animation-delay: 0s;">🩷</span> <span class="text-3xl floating" style="animation-delay: 0.3s;">💗</span> <span class="text-3xl floating" style="animation-delay: 0.6s;">💖</span> <span class="text-3xl floating" style="animation-delay: 0.9s;">💕</span> <span class="text-3xl floating" style="animation-delay: 1.2s;">🩷</span>
+    </div><!-- Signature -->
+    <p class="font-title text-pink-600 text-xl mt-6 opacity-80">With all my heart ❤️</p>
+   </div>
+  </div><!-- Love Explosion Modal -->
+  <div id="love-modal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
+   <div class="bg-white rounded-3xl p-8 text-center max-w-sm mx-4 bounce-in">
+    <div class="text-6xl mb-4 heart-beat">
+     💖
+    </div>
+    <h2 class="font-title text-2xl text-pink-600 mb-2">I Love You!</h2>
+    <p class="text-gray-600 mb-4">Forever and always 💕</p><button onclick="closeModal()" class="btn-love font-semibold py-2 px-6 rounded-full"> 🥰 Aww! </button>
+   </div>
+  </div>
+  <script>
+    const defaultConfig = {
+      photo_url: "https://image2url.com/r2/default/images/1770989823972-f540dc61-2978-4423-b416-5edddf183706.jpg",
+      main_message: "Happy Valentine Darling, Thank you for wanting to be my girlfriend. I don't know what to give you. Sorry, I can only give you this love you🤍🤍.",
+      title_text: "For My Love 💕",
+      primary_color: "#ec4899",
+      secondary_color: "#fce7f3",
+      text_color: "#831843",
+      accent_color: "#f472b6",
+      bg_color: "#fdf2f8",
+      font_family: "Quicksand"
+    };
+
+    let loveCount = 0;
+
+    function createFallingHeart() {
+      const container = document.getElementById('hearts-container');
+      const heart = document.createElement('div');
+      const hearts = ['💕', '💖', '💗', '💓', '🩷', '❤️', '💘'];
+      heart.className = 'falling-heart';
+      heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+      heart.style.left = Math.random() * 100 + '%';
+      heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+      heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+      heart.style.animationDelay = Math.random() * 2 + 's';
+      container.appendChild(heart);
+      setTimeout(() => heart.remove(), 7000);
+    }
+
+    setInterval(createFallingHeart, 800);
+
+    function sendLove() {
+      loveCount++;
+      const btn = document.getElementById('love-btn');
+      const counter = document.getElementById('love-counter');
+      const counterNum = document.getElementById('counter-num');
+      
+      btn.classList.add('wiggle');
+      setTimeout(() => btn.classList.remove('wiggle'), 500);
+      
+      counter.classList.remove('hidden');
+      counterNum.textContent = loveCount;
+      
+      for(let i = 0; i < 10; i++) {
+        setTimeout(createFallingHeart, i * 100);
+      }
+      
+      if(loveCount === 5 || loveCount === 10 || loveCount % 20 === 0) {
+        document.getElementById('love-modal').classList.remove('hidden');
+      }
+    }
+
+    function closeModal() {
+      document.getElementById('love-modal').classList.add('hidden');
+    }
+
+    async function onConfigChange(config) {
+      const messageEl = document.getElementById('message');
+      const titleEl = document.getElementById('title');
+      const photoEl = document.getElementById('photo-preview');
+      
+      if(messageEl) {
+        messageEl.textContent = config.main_message || defaultConfig.main_message;
+      }
+      if(titleEl) {
+        titleEl.textContent = config.title_text || defaultConfig.title_text;
+      }
+      if(photoEl && config.photo_url) {
+        photoEl.src = config.photo_url;
+      }
+
+      const font = config.font_family || defaultConfig.font_family;
+      document.querySelectorAll('.font-body, #message, p:not(.font-title)').forEach(el => {
+        el.style.fontFamily = `${font}, Quicksand, sans-serif`;
+      });
+
+      const primary = config.primary_color || defaultConfig.primary_color;
+      const secondary = config.secondary_color || defaultConfig.secondary_color;
+      const textCol = config.text_color || defaultConfig.text_color;
+      const accent = config.accent_color || defaultConfig.accent_color;
+      const bg = config.bg_color || defaultConfig.bg_color;
+
+      document.getElementById('app').style.background = `linear-gradient(180deg, ${bg} 0%, ${secondary} 50%, ${accent} 100%)`;
+      
+      document.querySelectorAll('.btn-love').forEach(el => {
+        el.style.borderColor = primary;
+        el.style.color = primary;
+      });
+
+      if(titleEl) titleEl.style.color = primary;
+      if(messageEl) messageEl.style.color = textCol;
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.bg_color || defaultConfig.bg_color,
+            set: (v) => { config.bg_color = v; window.elementSdk.setConfig({ bg_color: v }); }
+          },
+          {
+            get: () => config.secondary_color || defaultConfig.secondary_color,
+            set: (v) => { config.secondary_color = v; window.elementSdk.setConfig({ secondary_color: v }); }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (v) => { config.text_color = v; window.elementSdk.setConfig({ text_color: v }); }
+          },
+          {
+            get: () => config.primary_color || defaultConfig.primary_color,
+            set: (v) => { config.primary_color = v; window.elementSdk.setConfig({ primary_color: v }); }
+          },
+          {
+            get: () => config.accent_color || defaultConfig.accent_color,
+            set: (v) => { config.accent_color = v; window.elementSdk.setConfig({ accent_color: v }); }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (v) => { config.font_family = v; window.elementSdk.setConfig({ font_family: v }); }
+        },
+        fontSizeable: undefined
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ["photo_url", config.photo_url || defaultConfig.photo_url],
+        ["main_message", config.main_message || defaultConfig.main_message],
+        ["title_text", config.title_text || defaultConfig.title_text]
+      ]);
+    }
+
+    if(window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    } else {
+      onConfigChange(defaultConfig);
+    }
+
+    for(let i = 0; i < 5; i++) {
+      setTimeout(createFallingHeart, i * 500);
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9cd4bdfbe4339cf6',t:'MTc3MDk5MDA3NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
