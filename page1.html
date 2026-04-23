@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" class="h-full">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Click Me </title>
+
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500;600&display=swap');
+
+body{
+  font-family:'Quicksand',sans-serif;
+  margin:0;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: linear-gradient(180deg, #ffe4ec 0%, #ffc0cb 50%, #ffb6c1 100%);
+}
+
+.card{
+  background: linear-gradient(145deg,#fff5f7 0%,#ffe4ec 100%);
+  border:3px solid #ffb6c1;
+  border-radius:30px;
+  padding:40px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.btn-love{
+  background: linear-gradient(135deg,#ff69b4,#ff1493);
+  color:white;
+  padding:15px 35px;
+  border-radius:999px;
+  font-weight:600;
+  font-size:18px;
+  transition:0.3s;
+}
+
+.btn-love:hover{
+  transform:scale(1.05);
+  box-shadow:0 5px 25px rgba(255,105,180,0.5);
+}
+
+.floating{
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-12px);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card floating">
+  <h1 class="text-pink-600 text-3xl mb-6 font-bold">
+     press the button! 
+  </h1>
+
+  <button class="btn-love" onclick="goToLovePage()">
+    please click me!!
+  </button>
+</div>
+
+<script>
+function goToLovePage(){
+  // ganti "love.html" sesuai nama file halaman lama lu
+  window.location.href = "https://digibouquet.vercel.app/bouquet/839170b9-7b28-4bc7-a40a-5a68decd91fd";
+}
+</script>
+
+</body>
+</html>
